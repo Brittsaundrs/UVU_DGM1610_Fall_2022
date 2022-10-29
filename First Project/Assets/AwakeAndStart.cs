@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class AwakeAndStart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Awake is called before Start
+    void Awake()
     {
-        
+        Debug.Log("Awake called.");
     }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called once per code lifetime
+    void Start()
     {
-        
+        Debug.Log("Start called.");
     }
+    // Awake kind of sets up the stage before actually playing.
 }

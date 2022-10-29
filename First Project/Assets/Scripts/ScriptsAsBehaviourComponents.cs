@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptsAsBehav : MonoBehaviour
+public class ScriptsAsBehaviourComponents : MonoBehaviour
 {
     void Update()
     {

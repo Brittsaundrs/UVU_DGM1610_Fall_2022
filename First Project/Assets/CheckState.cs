@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class CheckState : MonoBehaviour
 {
+    public GameObject myObject;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Active Self: " + myObject.activeSelf);
+        Debug.Log("Active in Hierarchy: " + myObject.activeInHierarchy);
     }
 }
