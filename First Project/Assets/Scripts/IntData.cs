@@ -1,28 +1,34 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 
-[CreateAssetMenu]
-
-public class IntData : ScriptableObject
+public class IntData : MonoBehaviour
+// Debug timer
 {
-    public int value;
-    public void UpdateValue(int number)
+    float currentTime = 0f;
+    float startingTime = 10f;
+    string timeLastFrame = "0";
+    //will help avoid decimals
+
+    void Start()
+    // sets start time to 0
     {
-        value += number;
+        currentTime = startingTime;
     }
 
-    public void ReplaceValue(int number)
+    void Update()
     {
-        value = number;
-    }
-
-    public void DisplayImage(Image img)
-    {
-        img.fillAmount = value;
-    }
-
-    public void DisplayNumber(Text txt)
-    {
-        txt.text = value.ToString();
+        currentTime -= Time.deltaTime;
+        if(timeLastFrame != currentTime.ToString("f0"))
+        {
+            timeLastFrame = currentTime.ToString("f0");
+        }
+        if(currentTime <= 0)
+        {
+            currentTime = 0;
+            Debug.Log("Time's out!");
+            enabled = false;
+        }
     }
 }
+/* NOTE: Time.deltaTime helps keep things at a constant speed 
+regardless of the framerate*/

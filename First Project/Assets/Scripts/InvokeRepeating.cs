@@ -8,13 +8,17 @@ public class InvokeRepeating : MonoBehaviour
     
     void Start()
     {
-        InvokeRepeating("SpawnObject", 2, 1);
+        InvokeRepeating("SpawnObject", 3.0f, 4.0f);
     }
     
-    void SpawnObject()
+    /*void SpawnObject()
     {
         float x = Random.Range(-2.0f, 2.0f);
         float z = Random.Range(-2.0f, 2.0f);
         Instantiate(target, new Vector3(x, 2, z), Quaternion.identity);
+    }*/
+    void Update()
+    {
+        InvokeRepeating("SpawnObject", 3.0f, 4.0f);
     }
 }
