@@ -10,6 +10,7 @@ public class EnumScript : MonoBehaviour
         Direction myDirection;
         
         myDirection = Direction.North;
+        Debug.Log(myDirection);
     }
     
     Direction ReverseDirection (Direction dir)

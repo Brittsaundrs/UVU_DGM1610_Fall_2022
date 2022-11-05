@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class IntData : MonoBehaviour
+public class DebugTimer : MonoBehaviour
 // Debug timer
 {
     float currentTime = 0f;
