@@ -1,17 +1,19 @@
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Text))]
+// requires a text label on used object
 
 public class TextLabelBehaviour : MonoBehaviour
 {
-    public Text label;
+    public TextMeshProUGUI label;
     public FloatData dataObj;
 
     private void Start()
     {
-        label = GetComponent<Text>();
+        label = GetComponent<TMPro.TextMeshProUGUI>();
         UpdateLabel();
     }
     
