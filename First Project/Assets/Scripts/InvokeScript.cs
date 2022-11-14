@@ -3,9 +3,16 @@ using System.Collections;
 
 public class InvokeScript : MonoBehaviour 
 {
-    public GameObject target;
-    
-    
+    public bool UseConstant;
+    public float ConstantValue;
+    public FloatData Variable;
+
+    public float Value 
+    {
+        get {return UseConstant ? ConstantValue : Variable.value;}
+    }
+    public GameObject target;    
+
     void Start()
     {
         Invoke ("SpawnObject", 2);
