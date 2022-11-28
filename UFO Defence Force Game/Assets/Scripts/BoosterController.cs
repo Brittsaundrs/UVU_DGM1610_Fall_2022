@@ -6,19 +6,21 @@ public class BoosterController : MonoBehaviour
 
 {
     public float verticalInput;
-    public Transform booster;
     public GameObject boost; 
+    private float spawnRangeX = 20.0f;
+    private float spawnPosZ = 20.0f;
+    private float startDelay = 3.0f;
+    private float spawnInterval = 3.0f;
     // Have booster randomly pop up
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        verticalInput = Input.GetAxis("Vertical");
-    	// gets a key binding, better than GetKey
+        InvokeRepeating("SpawnBooster", startDelay, spawnInterval);
+    }
 
-        if(Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            // Create boost at booster transform position maintaining object rotation
-            Instantiate(boost, booster.transform.position, boost.transform.rotation);
-        }
+    void SpawnBooster()
+    {
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+        Instantiate(boost, spawnPos, boost.transform.rotation);
     }
 } 
