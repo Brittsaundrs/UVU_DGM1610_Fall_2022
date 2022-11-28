@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject == boost)
         {
             BoostersPickedUp++;
+            Debug.Log(BoostersPickedUp);
         }
         Destroy(other.gameObject);
     }

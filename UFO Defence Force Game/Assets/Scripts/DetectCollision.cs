@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+    public GameObject boost;
+    public int BoostersPickedUp = 0;
+
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (other.gameObject == boost)
+        {
+            BoostersPickedUp++;
+        }
+        else
+        {
+            Destroy(gameObject);
+            //Destroy(other.gameObject);
+        }
     }
 }
