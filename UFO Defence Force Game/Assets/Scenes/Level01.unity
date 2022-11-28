@@ -151,7 +151,7 @@ MeshCollider:
   m_GameObject: {fileID: 598533500}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalInput: 0
-  speed: 25
+  speed: 45
   xRange: 25
   blaster: {fileID: 651318699}
   laserbolt: {fileID: 7044458629897153788, guid: 3d819c1bafda9e545a42850f4e519e2a, type: 3}

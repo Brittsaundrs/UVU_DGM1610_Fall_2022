@@ -30,8 +30,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-        //If spacebar pressed create laserbolt
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        //If up arrow pressed create laserbolt
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             // Create laserbolt at blaster transform position maintaining object rotation
             Instantiate(laserbolt, blaster.transform.position, laserbolt.transform.rotation);
