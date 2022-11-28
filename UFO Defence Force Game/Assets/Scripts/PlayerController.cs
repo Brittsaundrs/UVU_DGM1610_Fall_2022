@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    // public float BoostersPickedUp = 0.0f;
+    public GameObject boost;
+    public float BoostersPickedUp = 0.0f;
     public float speed = 25.0f;
     public float xRange = 30.0f;
     public Transform blaster;
@@ -38,12 +39,14 @@ public class PlayerController : MonoBehaviour
             Instantiate(laserbolt, blaster.transform.position, laserbolt.transform.rotation);
         }
 
-        // add +1 each time player touches a booster
-       
     }
     // Delete any object with a trigger that hits the player
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject == boost)
+        {
+            BoostersPickedUp++;
+        }
         Destroy(other.gameObject);
     }
-}
+} 
