@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    public GameObject boost;
-    public int BoostersPickedUp = 0;
+    public ScoreManager scoreManager; // Store reference to score manager
+    public int scoreToGive;
 
-    void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.gameObject == boost)
-        {
-            BoostersPickedUp++;
-        }
-        else
-        {
-            Destroy(gameObject);
-            //Destroy(other.gameObject);
-        }
+        scoreManager = GameObject.Find("Score Manager").GetComponent<ScoreManager>(); // Find ScoreManager gameobject and reference ScoreManager script component
+    }
+
+    void OnTriggerEnter(Collider other) // Once Trigger has been entered record collision in "other"
+    {
+        scoreManager.IncreaseScore(scoreToGive); // Increase the Score
+        Destroy(gameObject); // Destroy this gameobject
+        Destroy(other.gameObject); // Destroy gameobject collided with
     }
 }
