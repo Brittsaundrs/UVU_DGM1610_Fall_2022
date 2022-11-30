@@ -6,13 +6,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    public GameObject boost;
-    public float BoostersPickedUp = 0.0f;
     public float speed = 25.0f;
     public float xRange = 30.0f;
     public Transform blaster;
     public GameObject laserbolt;
+    public GameManager gameManager;
 
+    void Start()
+    {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>(); // Reference GameManager script on Game Manager object
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,21 +36,11 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         //If up arrow pressed create laserbolt
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false) // prevents shooting after game is over 
         {
             // Create laserbolt at blaster transform position maintaining object rotation
             Instantiate(laserbolt, blaster.transform.position, laserbolt.transform.rotation);
         }
 
-    }
-    // Delete any object with a trigger that hits the player
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == boost)
-        {
-            BoostersPickedUp++;
-            Debug.Log(BoostersPickedUp);
-        }
-        Destroy(other.gameObject);
     }
 } 
