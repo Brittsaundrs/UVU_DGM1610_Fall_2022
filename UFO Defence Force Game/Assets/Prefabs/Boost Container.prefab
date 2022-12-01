@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 927137059}
   - component: {fileID: -1388351148893512238}
   - component: {fileID: -2523330946924912814}
+  - component: {fileID: 980120633218041208}
   m_Layer: 0
   m_Name: Boost Container
   m_TagString: Untagged
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7262269096455377430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70885389e7a4e6d488ab12b1357bf573, type: 3}
   m_Name: 
@@ -204,3 +205,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topBounds: 30
   lowerBounds: -10
+  gameManager: {fileID: 0}
+--- !u!114 &980120633218041208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262269096455377430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e401dd398dc76a4b909dfc6ae4f847d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
+  scoreToGive: 20
