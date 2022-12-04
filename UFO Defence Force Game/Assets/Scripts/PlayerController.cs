@@ -11,10 +11,12 @@ public class PlayerController : MonoBehaviour
     public Transform blaster;
     public GameObject laserbolt;
     public GameManager gameManager;
+    AudioSource shootingSound;
 
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>(); // Reference GameManager script on Game Manager object
+        shootingSound = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
         {
             // Create laserbolt at blaster transform position maintaining object rotation
             Instantiate(laserbolt, blaster.transform.position, laserbolt.transform.rotation);
+            shootingSound.Play(); // Plays Audio Source sound when laser is shot
         }
 
     }
