@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class MatchBehaviour : MonoBehaviour
 {
     public ID idObj;
-    public UnityEvent matchEvent, noMatchEvent, noMatchDelayedEvent, startEvent;
+    public UnityEvent matchEvent, noMatchEvent, noMatchDelayedEvent;
 
     private IEnumerator OnTriggerEnter (Collider other)
     {
@@ -21,7 +21,7 @@ public class MatchBehaviour : MonoBehaviour
         else
         {
             noMatchEvent.Invoke();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f); // To end game
             noMatchDelayedEvent.Invoke();
         }
     }
