@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1507250595160569814}
   - component: {fileID: 1507250595160569834}
   - component: {fileID: 1507250595160569835}
+  - component: {fileID: 9212820344609653378}
+  - component: {fileID: 1922573355}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f81f4637c6eac47986ec87596cb4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idObj: {fileID: 11400000, guid: 1b34b24fd4e2cde42b13c4632804a748, type: 2}
+  idObj: {fileID: 11400000, guid: 354eacafe0ab7264284f67630b8051b8, type: 2}
   startEvent:
     m_PersistentCalls:
       m_Calls:
@@ -138,13 +140,14 @@ MonoBehaviour:
         m_MethodName: ChangeRendererColor
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 1b34b24fd4e2cde42b13c4632804a748, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 354eacafe0ab7264284f67630b8051b8, type: 2}
           m_ObjectArgumentAssemblyTypeName: ColorID, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  UpScale: {fileID: 0}
 --- !u!114 &1507250595160569835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,3 +160,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8247f10bdc508f45a5c497a8d1d9c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &9212820344609653378
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507250595160569812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9b5a58896ef4d6d4cafc6f9a7e6b31cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &1922573355
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507250595160569812}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0321274f4b7bf9c44b85e6ed96feb5f6, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 0321274f4b7bf9c44b85e6ed96feb5f6, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

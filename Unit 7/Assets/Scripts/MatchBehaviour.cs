@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class MatchBehaviour : MonoBehaviour
 {
     public ID idObj;
-    public UnityEvent matchEvent, noMatchEvent, noMatchDelayedEvent;
+    public UnityEvent matchEvent, noMatchEvent, noMatchDelayedEvent, startEvent;
 
     private IEnumerator OnTriggerEnter (Collider other)
     {
