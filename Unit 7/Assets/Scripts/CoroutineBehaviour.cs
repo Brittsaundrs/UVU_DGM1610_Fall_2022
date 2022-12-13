@@ -1,14 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[CreateAssetMenu]
 public class CoroutineBehaviour : MonoBehaviour
 /* Note: Coroutines can only live inside a MonoBehaviour, cannot
 be put into a ScriptableObject parent*/
 {
-    public UnityEvent repeatEvent;
-    public int counterNum = 5;
+    public UnityEvent startEvent, repeatEvent, endEvent;
+
+    public IntData counterNum;
     public float seconds = 3.0f;
     private WaitForSeconds wfsObj;
     private WaitForFixedUpdate wffuObj;
@@ -18,13 +19,14 @@ be put into a ScriptableObject parent*/
     {
         wfsObj = new WaitForSeconds(seconds);
         wffuObj = new WaitForFixedUpdate();
-
-        while (counterNum > 0)
+        startEvent.Invoke();
+        yield return wfsObj;
+        while (counterNum.value > 0)
         {
-            Debug.Log(counterNum);
-            yield return wfsObj;
             repeatEvent.Invoke();
-            counterNum--; // counterNum now behaves as countdown
+            counterNum.value--; // counterNum now behaves as countdown
+            yield return wfsObj;
         }
+        endEvent.Invoke();
     }
 }
