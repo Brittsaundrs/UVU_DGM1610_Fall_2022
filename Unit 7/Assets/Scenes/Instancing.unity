@@ -196,7 +196,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 866b2ce1770ea104d8dcb25e073cd043, type: 2}
         m_TargetAssemblyTypeName: Instancer, Assembly-CSharp
-        m_MethodName: CreateInstanceFromListCounting
+        m_MethodName: CreateInstanceListRandomly
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 7791e2fb7391b4e409d8de31ffaf8f95, type: 2}
@@ -208,7 +208,7 @@ MonoBehaviour:
         m_CallState: 2
   canRun: 0
   counterNum: {fileID: 0}
-  seconds: 1
+  seconds: 0.5
 --- !u!1 &1740468670
 GameObject:
   m_ObjectHideFlags: 0
