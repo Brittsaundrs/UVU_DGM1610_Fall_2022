@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4585768304253756166}
   - component: {fileID: 9211388931550596772}
   - component: {fileID: -7348969970024042941}
+  - component: {fileID: -7766392667521259467}
+  - component: {fileID: -6457351027863730979}
+  - component: {fileID: -5146873110306144859}
   m_Layer: 0
   m_Name: Cross
   m_TagString: Untagged
@@ -97,7 +100,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1.19
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -128,4 +131,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ff6f32088f00a46bee4ce3dd9e42b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 1
+  seconds: 2
+--- !u!114 &-7766392667521259467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482536547643746304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8247f10bdc508f45a5c497a8d1d9c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6457351027863730979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482536547643746304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cd7d16c4d6323418e31eacf3f334b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7766392667521259467}
+        m_TargetAssemblyTypeName: SpriteBehaviour, Assembly-CSharp
+        m_MethodName: ChangeRendererColor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7dac04b4bde58064f95aac8f75ea87c1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ColorIDDataList, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  awakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  disableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-5146873110306144859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482536547643746304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89980cc1a5fde114083dc2ec45571527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idObj: {fileID: 0}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  UpScale: {fileID: 0}
+  colorIDDataListobj: {fileID: 11400000, guid: 7dac04b4bde58064f95aac8f75ea87c1, type: 2}
