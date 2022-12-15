@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657217949}
   - component: {fileID: 657217950}
+  - component: {fileID: 657217951}
   m_Layer: 0
   m_Name: Instancer GO
   m_TagString: Untagged
@@ -209,6 +210,23 @@ MonoBehaviour:
   canRun: 0
   counterNum: {fileID: 0}
   seconds: 0.5
+--- !u!114 &657217951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657217948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89980cc1a5fde114083dc2ec45571527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idObj: {fileID: 0}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  colorIDDataListObj: {fileID: 11400000, guid: 7dac04b4bde58064f95aac8f75ea87c1, type: 2}
 --- !u!1 &1740468670
 GameObject:
   m_ObjectHideFlags: 0

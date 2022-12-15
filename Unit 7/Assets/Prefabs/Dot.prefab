@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -7348969970024042941}
   - component: {fileID: -7766392667521259467}
   - component: {fileID: -6457351027863730979}
-  - component: {fileID: -5146873110306144859}
-  m_Layer: 0
-  m_Name: Cross
+  - component: {fileID: 7042363119753523911}
+  m_Layer: 6
+  m_Name: Dot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f82dfc5fc3c5a8f4080a3550427019c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   disableEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &-5146873110306144859
+--- !u!114 &7042363119753523911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,12 +186,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 482536547643746304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89980cc1a5fde114083dc2ec45571527, type: 3}
+  m_Script: {fileID: 11500000, guid: f1c11d08ac87f2f4ebc08fafe0488f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   idObj: {fileID: 0}
-  startEvent:
+  matchEvent:
     m_PersistentCalls:
       m_Calls: []
-  UpScale: {fileID: 0}
-  colorIDDataListobj: {fileID: 11400000, guid: 7dac04b4bde58064f95aac8f75ea87c1, type: 2}
+  noMatchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  noMatchDelayedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  colorIDDataListObj: {fileID: 11400000, guid: 7dac04b4bde58064f95aac8f75ea87c1, type: 2}
