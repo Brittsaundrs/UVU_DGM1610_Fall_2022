@@ -6,7 +6,7 @@ public class DraggableBehaviour : MonoBehaviour
 {
     private Camera cameraObj;
     public bool draggable;
-    public Vector3 position; // gets world space
+    public Vector3 position, offset; // gets world space
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,8 @@ public class DraggableBehaviour : MonoBehaviour
 
     public IEnumerator OnMouseDown()
     {
+        offset = transform.position - cameraObj.ScreenToViewportPoint(Input.mousePosition);
+        yield return new WaitForFixedUpdate(); // waits for just a half-second until info is collected
         draggable = true; // set draggable to true
 
         while (draggable) // while it's true...
@@ -23,7 +25,7 @@ public class DraggableBehaviour : MonoBehaviour
             yield return new WaitForFixedUpdate(); // give it a sec
 
             // changes Vector3 position
-            position = cameraObj.ScreenToViewportPoint(Input.mousePosition);
+            position = cameraObj.ScreenToViewportPoint(Input.mousePosition) - offset;
             transform.position = position; // feeds info to transform value
         }
     }
