@@ -17,8 +17,8 @@ public class DraggableBehaviour : MonoBehaviour
     public IEnumerator OnMouseDown()
     {
         offset = transform.position - cameraObj.ScreenToViewportPoint(Input.mousePosition);
-        yield return new WaitForFixedUpdate(); // waits for just a half-second until info is collected
         draggable = true; // set draggable to true
+        yield return new WaitForFixedUpdate(); // waits for just a half-second until info is collected
 
         while (draggable) // while it's true...
         {
@@ -28,6 +28,11 @@ public class DraggableBehaviour : MonoBehaviour
             position = cameraObj.ScreenToViewportPoint(Input.mousePosition) - offset;
             transform.position = position; // feeds info to transform value
         }
+
+        /*NOTE: for some reason, the code only works when using
+        ScreenToViewportPoint over ScreenToWorldPoint and subtracting 
+        the offset instead of adding it. I don't know why. It still doesn't 
+        drag nicely, there's still some lag */
     }
 
     private void OnMouseUp()
