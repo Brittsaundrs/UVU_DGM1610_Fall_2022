@@ -23,6 +23,7 @@ public class MatchBehaviour : MonoBehaviour
             noMatchEvent.Invoke();
             yield return new WaitForSeconds(0.5f); // To end game
             noMatchDelayedEvent.Invoke();
+
         }
     }
 }

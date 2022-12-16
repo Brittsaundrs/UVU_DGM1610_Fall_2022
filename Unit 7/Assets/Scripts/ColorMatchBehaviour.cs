@@ -10,6 +10,14 @@ public class ColorMatchBehaviour : MatchBehaviour
     {
         idObj = colorIDDataListObj.currentColor;
     }
+
+    public void ChangeColor(SpriteRenderer renderer)
+    {
+        var newColor = idObj as ColorID;
+        renderer.color = newColor.value;
+    }
 }
 
 /* Only difference from colorID is the inheritance*/
+
+
