@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpriteBehaviour : MonoBehaviour
 {
     private SpriteRenderer rendererObj;
+    public ColorID color;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class SpriteBehaviour : MonoBehaviour
     public void ChangeRendererColor(ColorID obj)
     {
         // refers to ColorID script > value indexed
-        rendererObj.color = obj.value;
+        rendererObj.color = obj.value; // create color
+        // rendererObj.color = color.value;
     }
 }

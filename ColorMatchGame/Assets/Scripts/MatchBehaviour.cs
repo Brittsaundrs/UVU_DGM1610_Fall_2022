@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ public class MatchBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // Get component
         var tempObj = other.GetComponent<IDContainerBehaviour>();
         
         // checks if not == null, then get its id

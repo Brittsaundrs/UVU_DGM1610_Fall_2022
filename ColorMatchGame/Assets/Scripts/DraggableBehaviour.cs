@@ -7,6 +7,7 @@ public class DraggableBehaviour : MonoBehaviour
     private Camera cameraObj;
     public bool draggable;
     public Vector3 position, offset; // gets world space
+    private Vector3 screenPoint, currentScreenPoint;
     
     // Start is called before the first frame update
     void Start()
@@ -16,23 +17,21 @@ public class DraggableBehaviour : MonoBehaviour
 
     public IEnumerator OnMouseDown()
     {
-        offset = transform.position - cameraObj.ScreenToViewportPoint(Input.mousePosition);
+        screenPoint  = Camera.main.WorldToScreenPoint(transform.position);
+        //offset = transform.position - cameraObj.ScreenToViewportPoint(Input.mousePosition);
+        offset = transform.position - cameraObj.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         draggable = true; // set draggable to true
         yield return new WaitForFixedUpdate(); // waits for just a half-second until info is collected
 
         while (draggable) // while it's true...
         {
             yield return new WaitForFixedUpdate(); // give it a sec
+            currentScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
             // changes Vector3 position
-            position = cameraObj.ScreenToViewportPoint(Input.mousePosition) - offset;
+            position = cameraObj.ScreenToWorldPoint(currentScreenPoint) + offset;
             transform.position = position; // feeds info to transform value
         }
-
-        /*NOTE: for some reason, the code only works when using
-        ScreenToViewportPoint over ScreenToWorldPoint and subtracting 
-        the offset instead of adding it. I don't know why. It still doesn't 
-        drag nicely, there's still some lag */
     }
 
     private void OnMouseUp()
